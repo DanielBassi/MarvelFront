@@ -6,6 +6,7 @@
 
 ## Instalación
 ```bash
+git clone https://github.com/DanielBassi/MarvelFront.git
 cd MarvelFront
 npm install
 ng serve
