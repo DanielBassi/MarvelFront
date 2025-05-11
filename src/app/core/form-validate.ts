@@ -6,6 +6,10 @@ export class FormValidate {
     protected setErrors(form: FormGroup, errors: any): void {
         let errorList = [];
 
+        if(errors == null || errors == "null") {
+            return;
+        }
+
         if (errors instanceof HttpErrorResponse) {
             errorList = errors.error.errors
         }
