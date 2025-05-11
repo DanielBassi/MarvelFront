@@ -1,0 +1,4 @@
+<h2 class="text-danger mb-4">Cómics Disponibles</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <app-comic *ngFor="let comic of comics" class="col-lg-3" [comic]="comic"></app-comic>
+</div>

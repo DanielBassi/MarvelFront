@@ -1,0 +1,2 @@
+<button *ngIf="!comic?.isFavorite" class="btn btn-danger" (click)="add(comic)"><i class="bi bi-heart"></i> Añadir a Favoritos</button>
+<button *ngIf="comic?.isFavorite" class="btn btn-danger" (click)="remove(comic)"><i class="bi bi-trash"></i> Quitar de Favoritos</button>

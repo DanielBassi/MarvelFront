@@ -1,0 +1,44 @@
+<section class="hero-section">
+  <div class="hero-overlay">
+    <h1 class="comic-title">{{ comic?.title }}</h1>
+    <p class="lead">{{ comic?.description }}</p>
+    <app-favorite-button [comic]="comic" (marcarFavorito)="marcarFavorito($event)"></app-favorite-button>
+  </div>
+</section>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="text-danger">Sinopsis</h2>
+      {{ comic?.textObjects?.[0]?.text }}
+
+      <h3 class="text-danger mt-4">Detalles</h3>
+      <ul>
+        <li><strong>PUBLICADO:</strong> {{ comic?.modified }}</li>
+        <li *ngFor="let creator of comic?.creators?.items">
+          <strong>{{ creator.role.toUpperCase() }}</strong> {{ creator.name }}
+        </li>
+      </ul>
+
+      <h3 class="text-danger mt-4">Galería de Imágenes</h3>
+      <div class="row gallery g-3">
+        <div class="col-6 col-md-4" *ngFor="let image of comic?.images">
+          <img [src]="`${image?.path}.${image?.extension}`" class="img-fluid" [alt]="comic?.title">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="text-danger">Compra Ahora</h3>
+      <p><strong>Precio:</strong> ${{ comic?.prices?.[0]?.priceAmount }}</p>
+      <button class="btn btn-success w-100 mb-3"><i class="bi bi-cart"></i> Comprar</button>
+
+      <h5 class="text-danger">Compartir</h5>
+      <div class="d-flex gap-2">
+        <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

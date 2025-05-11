@@ -1,0 +1,11 @@
+<div class="card comic-card">
+    <img [src]="getImage()" class="card-img-top" alt="Comic" />
+    <div class="card-body">
+        <h5 class="card-title">{{ comic?.title }}</h5>
+        <p class="card-text">{{ comic?.description }}</p>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <app-favorite-button [comic]="comic" (marcarFavorito)="marcarFavorito($event)"></app-favorite-button>
+            <a [routerLink]="`/comic-detail/${comic?.id}`">Ver detalles</a>
+        </div>
+    </div>
+</div>

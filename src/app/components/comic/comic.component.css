@@ -1,0 +1,42 @@
+.comic-card {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+    color: #f3f3f3;
+    cursor: pointer;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.comic-card:hover {
+    transform: scale(1.03);
+}
+
+img {
+    height: 200px;
+    width: 306px;
+}
+
+.comic-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.comic-card .card-text {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a {
+    text-decoration: none;
+}
+
+.favorite-btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+}

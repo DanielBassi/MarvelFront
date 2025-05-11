@@ -1,0 +1,45 @@
+<div class="auth-wrapper">
+    <div class="auth-container">
+        <div class="auth-title">
+            <i class="bi bi-shield-shaded"></i> Registrarse
+        </div>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" formControlName="name" form class="form-control" id="name"
+                    placeholder="Ej: Iron Man">
+                <div class="text-danger" *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+                    {{ userForm.get('name')?.errors?.['serverError'] }}
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="identification" class="form-label">Identificación</label>
+                <input type="text" formControlName="identification" form class="form-control" id="identification"
+                    placeholder="Ej: 1234567890">
+                <div class="text-danger"
+                    *ngIf="userForm.get('identification')?.invalid && userForm.get('identification')?.touched">
+                    {{ userForm.get('identification')?.errors?.['serverError'] }}
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" formControlName="email" class="form-control" id="username"
+                    placeholder="Ej: ironman@avengers.com">
+                <div class="text-danger" *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+                    {{ userForm.get('email')?.errors?.['serverError'] }}
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" formControlName="password" class="form-control" id="password"
+                    placeholder="Tu contraseña secreta">
+                <div class="text-danger" *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+                    {{ userForm.get('password')?.errors?.['serverError'] }}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Registrar</button>
+            <hr class="text-secondary">
+            <a routerLink="/auth" class="btn btn-outline-light w-100">Iniciar Sesión</a>
+        </form>
+    </div>
+</div>
