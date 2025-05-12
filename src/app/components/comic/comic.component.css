@@ -15,8 +15,8 @@
 }
 
 img {
-    height: 200px;
-    width: 306px;
+    height: 300px;
+    width: 100%;
 }
 
 .comic-card .card-body {
@@ -34,9 +34,5 @@ img {
 
 a {
     text-decoration: none;
-}
-
-.favorite-btn {
-  cursor: pointer;
-  font-size: 1.5rem;
+    font-size: .8em;
 }
